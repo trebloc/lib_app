@@ -18,4 +18,9 @@ class LibrariesController < ApplicationController
 
 		redirect_to libraries_path
 	end
+
+ 	def show
+    	@library = Library.find_by_id(params[:id])
+    	render :show
+  	end  	
 end

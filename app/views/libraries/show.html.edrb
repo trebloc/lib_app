@@ -1,0 +1,5 @@
+<div>
+  <p><%= @library.name %></p>
+  <p><%= @library.floor_count %></p>  
+  <p><%= @library.floor_area %></p>  
+</div>
