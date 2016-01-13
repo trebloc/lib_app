@@ -26,4 +26,9 @@ class UsersController < ApplicationController
     render :show
   end  
 
+  def destroy
+    logout # this method lives in the SessionsHelper!
+    redirect_to root_path
+  end  
+
 end
