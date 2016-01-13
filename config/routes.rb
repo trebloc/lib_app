@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy" # <-- strictly speaking this isn't RESTful (it should be a DELETE not GET), but it's super conveient to do it this way
   get "/libraries", to: "libraries#index"
+  get "/libraries/new", to: "libraries#new", as: "new_library"
+  post "/libraries", to: "libraries#create"
   post "/sessions", to: "sessions#create"   
 end
