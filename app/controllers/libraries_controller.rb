@@ -13,7 +13,6 @@ class LibrariesController < ApplicationController
 	end
 
 	def create
-		library_params = params.require(:library).permit(:name, :floor_count, :floor_area)
 		@library = Library.create(library_params)
 
 		redirect_to libraries_path
@@ -22,5 +21,11 @@ class LibrariesController < ApplicationController
  	def show
     	@library = Library.find_by_id(params[:id])
     	render :show
-  	end  	
+  	end
+
+  	private
+
+  	def library_params
+    	params.require(:library).permit(:name, :floor_count, :floor_area)
+  end  	  	
 end
