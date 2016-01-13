@@ -5,4 +5,13 @@ class UsersController < ApplicationController
     render :index
   end
 
+  def new
+    # we need to make
+    # a new user
+    # to pass to the
+    # form later
+    @user = User.new
+    render :new
+  end  
+
 end
