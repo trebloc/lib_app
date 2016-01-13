@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+
+  before_action :logged_in?, only: [:show]
+
 # grab the users
   def index
     @users = User.all
@@ -21,9 +25,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
+    @user = User.find(params[:id])
     render :show
-  end  
+  end
 
   def destroy
     logout # this method lives in the SessionsHelper!
